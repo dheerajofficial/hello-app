@@ -14,6 +14,7 @@ export class HomeComponent {
   baseUrl: string;
   http: HttpClient;
   model = new Person();
+  mesg: string;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) { 
     this.baseUrl = baseUrl;
@@ -23,7 +24,7 @@ export class HomeComponent {
   onSubmit(form:any) {
     console.log(form.value)
     this.http.post<Person>(this.baseUrl + 'person', form.value).subscribe(result => {
-      
+      this.mesg = "Person data saved successfully! check Person info link"
     }, error => console.error(error));
   }
 }
