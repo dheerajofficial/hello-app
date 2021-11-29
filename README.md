@@ -1,2 +1,4 @@
 # hello-app
-.NET 6 angular project
+.NET 6 angular project.
+
+## VS Code
